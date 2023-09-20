@@ -1,0 +1,48 @@
+#define sound 33
+#define sen 2000
+#define pin 5
+int i = 0, j = 0, toggle = 0;
+
+void setup() {
+  pinMode(pin, OUTPUT);
+  Serial.begin(115200);
+  while (true) {
+    if (toggle == 0) {
+      i = 0;
+      j = 0;
+      //Serial.println(analogRead(sound));
+      if (analogRead(sound) >= sen) {
+        delay(100);
+        i = 0;
+        j = 0;
+        while (i <= 500 && j == 0) {
+          if (analogRead(sound) >= sen && i >= 150) {
+            digitalWrite(pin, HIGH);
+            toggle = 1;
+            while (analogRead(sound) >= sen) {
+              delay(10);
+            }
+            delay(250);
+            j = 1;
+          }
+          i++;
+          Serial.println(i);
+        }
+      }
+    } else {
+      i = 0;
+      j = 0;
+      if (analogRead(sound) >= sen) {
+        digitalWrite(pin, LOW);
+        toggle = 0;
+        while (analogRead(sound) >= sen) {
+          delay(10);
+        }
+        delay(200);
+      }
+    }
+  }
+}
+
+void loop() {
+}
