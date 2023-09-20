@@ -1,2 +1,2 @@
-# Waiting for the internet T-T
-![alt text](https://github.com/Pooonmy/IPST-Robot/blob/main/8259_ChikaAngry.png?raw=true)
+# Clap Clap
+![Alt Text](https://media.tenor.com/bIpDrwCobToAAAAd/clap-pepe-clap.gif)
